@@ -1,0 +1,27 @@
+{
+  "name": "create-wordpress-block",
+  "version": "0.0.0",
+  "description": "Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.",
+  "author": {
+    "name": "Grzegorz (Greg) Ziółkowski",
+    "email": "grzegorz@gziolo.pl",
+    "url": "https://gziolo.pl"
+  },
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "block"
+  ],
+  "homepage": "https://github.com/gziolo/create-wordpress-block#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gziolo/create-wordpress-block.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gziolo/create-wordpress-block/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
