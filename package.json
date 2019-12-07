@@ -22,6 +22,11 @@
   },
   "main": "index.js",
   "scripts": {
+    "lint-js": "wp-scripts lint-js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^6.0.0",
+    "inquirer": "^7.0.0"
   }
 }
