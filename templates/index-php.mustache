@@ -20,7 +20,7 @@ function {{machineName}}_block_init() {
 	$dir = get_template_directory() . '/blocks';
 	{{/theme}}
 
-	$index_js = '{{slug}}/index.js';
+	$index_js = 'index.js';
 	wp_register_script(
 		'{{slug}}-block-editor',
 		{{#plugin}}
@@ -37,7 +37,7 @@ function {{machineName}}_block_init() {
 		filemtime( "$dir/$index_js" )
 	);
 
-	$editor_css = '{{slug}}/editor.css';
+	$editor_css = 'editor.css';
 	wp_register_style(
 		'{{slug}}-block-editor',
 		{{#plugin}}
@@ -50,7 +50,7 @@ function {{machineName}}_block_init() {
 		filemtime( "$dir/$editor_css" )
 	);
 
-	$style_css = '{{slug}}/style.css';
+	$style_css = 'style.css';
 	wp_register_style(
 		'{{slug}}-block',
 		{{#plugin}}
