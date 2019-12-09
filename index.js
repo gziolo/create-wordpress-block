@@ -2,7 +2,8 @@
  * External dependencies
  */
 const inquirer = require( 'inquirer' );
-const { readFile } = require( 'fs' ).promises;
+const makeDir = require( 'make-dir' );
+const { readFile, writeFile } = require( 'fs' ).promises;
 const { render } = require( 'mustache' );
 
 const categories = [ 'common', 'embed', 'formatting', 'layout', 'widgets' ];
@@ -19,19 +20,19 @@ inquirer
 			type: 'input',
 			name: 'slug',
 			message: 'The internal name for the block',
-			default: 'es5-demo',
+			default: 'example-es5',
 		},
 		{
 			type: 'input',
 			name: 'title',
 			message: 'The display title for your block',
-			default: 'ES5 Demo',
+			default: 'ES5 Example',
 		},
 		{
 			type: 'input',
 			name: 'description',
 			message: 'The short description for your block (optional)',
-			default: 'Demo block written with ES5 standard and no JSX – no build required.',
+			default: 'Example block written with ES5 standard and no JSX – no build required.',
 		},
 		{
 			type: 'input',
@@ -48,6 +49,10 @@ inquirer
 		},
 	] )
 	.then( async ( answers ) => {
-		const template = await readFile( './templates/index-js-es5.mustache', 'utf8' );
-		console.log( render( template, answers ) );
+		const { slug } = answers;
+		await makeDir( slug );
+		const jsTemplate = await readFile( './templates/index-js-es5.mustache', 'utf8' );
+		writeFile( `${ slug }/index.js`, render( jsTemplate, answers ) );
+		const editorCssTemplate = await readFile( './templates/editor-css.mustache', 'utf8' );
+		writeFile( `${ slug }/editor.css`, render( editorCssTemplate, answers ) );
 	} );

@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "plugin:@wordpress/eslint-plugin/es5"
+  ],
+  "globals": {
+		"window": true,
+		"document": true,
+		"wp": "readonly"
+	},
+  "overrides": [
+    {
+      "files": [ "*.js" ],
+      "excludedFiles": [ "example-*/*.js" ],
+      "extends": [
+        "plugin:@wordpress/eslint-plugin/recommended"
+      ]
+    }
+  ]
+}
