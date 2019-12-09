@@ -27,7 +27,7 @@
   "scripts": {
     "lint-css": "wp-scripts lint-style",
     "lint-js": "wp-scripts lint-js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint-css && npm run lint-js"
   },
   "dependencies": {
     "inquirer": "^7.0.0",
