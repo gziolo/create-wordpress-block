@@ -48,11 +48,44 @@ inquirer
 			default: 'common',
 		},
 	] )
-	.then( async ( answers ) => {
-		const { slug } = answers;
+	.then( async ( {
+		namespace,
+		slug,
+		title,
+		description,
+		dashicon,
+		category,
+	} ) => {
 		await makeDir( slug );
-		const jsTemplate = await readFile( './templates/index-js-es5.mustache', 'utf8' );
-		writeFile( `${ slug }/index.js`, render( jsTemplate, answers ) );
-		const editorCssTemplate = await readFile( './templates/editor-css.mustache', 'utf8' );
-		writeFile( `${ slug }/editor.css`, render( editorCssTemplate, answers ) );
+
+		const templates = {
+			'.editorconfig': 'editorconfig',
+			'editor.css': 'editor-css',
+			'index.js': 'index-js-es5',
+			'index.php': 'index-php',
+			'style.css': 'style-css',
+		};
+		const view = {
+			namespace,
+			slug,
+			plugin: namespace,
+			machineName: `${ namespace }_${ slug }`.replace( /\-/g, '_' ),
+			title,
+			description,
+			dashicon,
+			category,
+		};
+
+		await Promise.all(
+			Object.keys( templates ).map( async ( fileName ) => {
+				const template = await readFile(
+					`./templates/${ templates[ fileName ] }.mustache`,
+					'utf8'
+				);
+				writeFile(
+					`${ slug }/${ fileName }`,
+					render( template, view )
+				);
+			} )
+		);
 	} );

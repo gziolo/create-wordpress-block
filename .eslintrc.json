@@ -3,10 +3,10 @@
     "plugin:@wordpress/eslint-plugin/es5"
   ],
   "globals": {
-		"window": true,
-		"document": true,
-		"wp": "readonly"
-	},
+    "window": true,
+    "document": true,
+    "wp": "readonly"
+  },
   "overrides": [
     {
       "files": [ "*.js" ],

@@ -12,7 +12,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
-function {{machine_name}}_block_init() {
+function {{machineName}}_block_init() {
 	{{#plugin}}
 	$dir = dirname( __FILE__ );
 	{{/plugin}}
@@ -69,4 +69,4 @@ function {{machine_name}}_block_init() {
 		'style'         => '{{slug}}-block',
 	) );
 }
-add_action( 'init', '{{machine_name}}_block_init' );
+add_action( 'init', '{{machineName}}_block_init' );
