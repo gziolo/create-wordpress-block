@@ -3,6 +3,7 @@
  * External dependencies
  */
 const inquirer = require( 'inquirer' );
+const { join } = require( 'path' );
 const makeDir = require( 'make-dir' );
 const { readFile, writeFile } = require( 'fs' ).promises;
 const { render } = require( 'mustache' );
@@ -80,7 +81,7 @@ inquirer
 		await Promise.all(
 			Object.keys( templates ).map( async ( fileName ) => {
 				const template = await readFile(
-					`./templates/${ templates[ fileName ] }.mustache`,
+					join( __dirname, `templates/${ templates[ fileName ] }.mustache` ),
 					'utf8'
 				);
 				writeFile(
