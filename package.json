@@ -21,6 +21,9 @@
     "url": "https://github.com/gziolo/create-wordpress-block/issues"
   },
   "main": "index.js",
+  "bin": {
+    "create-wordpress-block": "./index.js"
+  },
   "scripts": {
     "lint-css": "wp-scripts lint-style",
     "lint-js": "wp-scripts lint-js",
