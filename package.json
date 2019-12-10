@@ -25,6 +25,7 @@
     "create-wordpress-block": "./index.js"
   },
   "scripts": {
+    "build": "./index.js example-es5",
     "lint-css": "wp-scripts lint-style",
     "lint-js": "wp-scripts lint-js",
     "test": "npm run lint-css && npm run lint-js"
