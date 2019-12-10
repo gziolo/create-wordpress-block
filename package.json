@@ -28,9 +28,11 @@
     "build": "./index.js example-es5",
     "lint-css": "wp-scripts lint-style",
     "lint-js": "wp-scripts lint-js",
-    "test": "npm run lint-css && npm run lint-js"
+    "test-unit": "wp-scripts test-unit-js",
+    "test": "npm run lint-css && npm run lint-js && npm run test-unit"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
     "commander": "^4.0.1",
     "inquirer": "^7.0.0",
     "make-dir": "^3.0.0",

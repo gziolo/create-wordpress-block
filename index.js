@@ -2,6 +2,7 @@
 /**
  * External dependencies
  */
+const chalk = require( 'chalk' );
 const program = require( 'commander' );
 const inquirer = require( 'inquirer' );
 
@@ -11,6 +12,16 @@ const inquirer = require( 'inquirer' );
 const { name, version } = require( './package.json' );
 const scaffold = require( './scaffold' );
 const { getAnswers, getPrompts } = require( './templates' );
+const { startCase } = require( './utils' );
+
+const info = ( input ) => {
+	// eslint-disable-next-line no-console
+	console.log( input );
+};
+const success = ( input ) => {
+	// eslint-disable-next-line no-console
+	console.log( chalk.bold.green( input ) );
+};
 
 program
 	.name( name )
@@ -19,22 +30,29 @@ program
 	.arguments( '[slug]' )
 	.action( ( slug ) => {
 		if ( slug ) {
+			const title = startCase( slug );
 			scaffold( {
 				...getAnswers( 'es5' ),
 				slug,
+				title,
+			} ).then( () => {
+				success( `Success: Created block '${ title }'.` );
 			} );
 		} else {
 			inquirer
 				.prompt( getPrompts( 'es5' ) )
-				.then( scaffold );
+				.then( async ( answers ) => {
+					await scaffold( answers );
+					success( `Success: Created block '${ answers.title }'.` );
+				} );
 		}
 	} );
 
 program.on( '--help', function() {
-	console.log( '' );
-	console.log( 'Examples:' );
-	console.log( `  $ ${ name }` );
-	console.log( `  $ ${ name } todo-list` );
+	info( '' );
+	info( 'Examples:' );
+	info( `  $ ${ name }` );
+	info( `  $ ${ name } todo-list` );
 } );
 
 program.parse( process.argv );

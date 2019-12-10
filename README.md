@@ -16,29 +16,33 @@ $ npm init wordpress-block [options] [slug]
 ```
 
 Options:
-  [slug]         the target location for scaffolded files and internal block name
-  -V, --version  output the version number
-  -h, --help     output usage information
+```bash
+[slug]         the target location for scaffolded files and internal block name
+-V, --version  output the version number
+-h, --help     output usage information
+```
 
 Examples:
 
-1. Quick start.
+1. Quick start – one command that uses defaults for all options. You just need
+to provide the `slug` which is the target location for scaffolded files
+and the internal block name.
 
   ```bash
   $ npm init wordpress-block todo-list
   $ cd todo-list
   ```
 
-2. Interactive mode.
+2. Interactive mode - it gives a chance to customize a few most important options.
 
   ```bash
   $ npm init wordpress-block
   ```
 
-  When you scaffold a block, you must provide at least a `slug` name and the `namespace`
-  which usually corresponds to either the `theme` or `plugin` name. In most cases,
-  we recommended pairing blocks with plugins rather than themes, because only using
-  plugin ensures that all blocks still work when your theme changes.
+When you scaffold a block, you must provide at least a `slug` name, the `namespace`
+which usually corresponds to either the `theme` or `plugin` name, and the `category`. In most cases,
+we recommended pairing blocks with plugins rather than themes, because only using
+plugin ensures that all blocks still work when your theme changes.
 
 ## WP-CLI
 

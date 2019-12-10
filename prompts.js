@@ -1,3 +1,8 @@
+/**
+ * Internal dependencies
+ */
+const { upperFirst } = require( './utils' );
+
 const namespace = {
 	type: 'input',
 	name: 'namespace',
@@ -29,8 +34,7 @@ const title = {
 	name: 'title',
 	message: 'The display title for your block:',
 	filter( input ) {
-		return input &&
-			input.charAt( 0 ).toUpperCase() + input.slice( 1 );
+		return input && upperFirst( input );
 	},
 };
 
@@ -39,8 +43,7 @@ const description = {
 	name: 'description',
 	message: 'The short description for your block (optional):',
 	filter( input ) {
-		return input &&
-			input.charAt( 0 ).toUpperCase() + input.slice( 1 );
+		return input && upperFirst( input );
 	},
 };
 
