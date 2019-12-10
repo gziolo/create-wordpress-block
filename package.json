@@ -21,6 +21,10 @@
     "url": "https://github.com/gziolo/create-wordpress-block/issues"
   },
   "main": "index.js",
+  "files": [
+    "templates",
+    "*.js"
+  ],
   "bin": {
     "create-wordpress-block": "./index.js"
   },
