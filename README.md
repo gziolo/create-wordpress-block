@@ -1,6 +1,8 @@
 # Create WordPress Block
 Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.
 
+![Create example block – demo](./assets/create-wordpress-block.gif)
+
 ## Description
 
 Blocks are the fundamental element of the WordPress block editor. They are the primary way in which plugins and themes can register their own functionality and extend the capabilities of the editor.
