@@ -30,6 +30,7 @@
     "test": "npm run lint-css && npm run lint-js"
   },
   "dependencies": {
+    "commander": "^4.0.1",
     "inquirer": "^7.0.0",
     "make-dir": "^3.0.0",
     "mustache": "^3.1.0"
