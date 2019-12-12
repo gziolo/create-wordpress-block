@@ -11,7 +11,11 @@ const inquirer = require( 'inquirer' );
  */
 const { name, version } = require( './package.json' );
 const scaffold = require( './scaffold' );
-const { getAnswers, getPrompts } = require( './templates' );
+const {
+	getDefaultAnswers,
+	getOutputFiles,
+	getPrompts,
+} = require( './templates' );
 const { startCase } = require( './utils' );
 
 const info = ( input ) => {
@@ -29,20 +33,23 @@ program
 	.version( version )
 	.arguments( '[slug]' )
 	.action( ( slug ) => {
+		const templateName = 'es5';
 		if ( slug ) {
 			const title = startCase( slug );
-			scaffold( {
-				...getAnswers( 'es5' ),
+			const answers = {
+				...getDefaultAnswers( templateName ),
 				slug,
 				title,
-			} ).then( () => {
-				success( `Success: Created block '${ title }'.` );
-			} );
+			};
+			scaffold( getOutputFiles( templateName ), answers )
+				.then( () => {
+					success( `Success: Created block '${ title }'.` );
+				} );
 		} else {
 			inquirer
-				.prompt( getPrompts( 'es5' ) )
+				.prompt( getPrompts( templateName ) )
 				.then( async ( answers ) => {
-					await scaffold( answers );
+					await scaffold( getOutputFiles( templateName ), answers );
 					success( `Success: Created block '${ answers.title }'.` );
 				} );
 		}

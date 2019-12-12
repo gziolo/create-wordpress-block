@@ -9,30 +9,61 @@ const category = 'widgets';
 
 const templates = {
 	es5: {
-		namespace,
-		slug: 'example-es5',
-		title: 'ES5 Example',
-		description: 'Example block written with ES5 standard and no JSX – no build required.',
-		dashicon,
-		category,
+		defaultAnswers: {
+			namespace,
+			slug: 'example-es5',
+			title: 'ES5 Example',
+			description: 'Example block written with ES5 standard and no JSX – no build step required.',
+			dashicon,
+			category,
+		},
+		outputFiles: {
+			'.editorconfig': 'editorconfig',
+			'editor.css': 'editor-css',
+			'index.js': 'index-js-es5',
+			'index.php': 'index-php',
+			'style.css': 'style-css',
+		},
+	},
+	esnext: {
+		defaultAnswers: {
+			namespace,
+			slug: 'example-esnext',
+			title: 'ESNext Example',
+			description: 'Example block written with ESNext standard and JSX support – build step required.',
+			dashicon,
+			category,
+		},
+		outputFiles: {
+			'.editorconfig': 'editorconfig',
+			'editor.css': 'editor-css',
+			'index.js': 'index-js-es5',
+			'index.php': 'index-php',
+			'style.css': 'style-css',
+		},
 	},
 };
 
-const getAnswers = ( templateName ) => {
-	return templates[ templateName ];
+const getDefaultAnswers = ( templateName ) => {
+	return templates[ templateName ].defaultAnswers;
+};
+
+const getOutputFiles = ( templateName ) => {
+	return templates[ templateName ].outputFiles;
 };
 
 const getPrompts = ( templateName ) => {
-	const template = templates[ templateName ];
-	return Object.keys( template ).map( ( promptName ) => {
+	const defaultAnswers = getDefaultAnswers( templateName );
+	return Object.keys( prompts ).map( ( promptName ) => {
 		return {
 			...prompts[ promptName ],
-			default: template[ promptName ],
+			default: defaultAnswers[ promptName ],
 		};
 	} );
 };
 
 module.exports = {
-	getAnswers,
+	getDefaultAnswers,
+	getOutputFiles,
 	getPrompts,
 };

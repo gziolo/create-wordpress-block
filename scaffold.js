@@ -6,7 +6,7 @@ const makeDir = require( 'make-dir' );
 const { readFile, writeFile } = require( 'fs' ).promises;
 const { render } = require( 'mustache' );
 
-module.exports = async function( {
+module.exports = async function( outputFiles, {
 	namespace,
 	slug,
 	title,
@@ -16,13 +16,6 @@ module.exports = async function( {
 } ) {
 	await makeDir( slug );
 
-	const templates = {
-		'.editorconfig': 'editorconfig',
-		'editor.css': 'editor-css',
-		'index.js': 'index-js-es5',
-		'index.php': 'index-php',
-		'style.css': 'style-css',
-	};
 	const view = {
 		namespace,
 		slug,
@@ -35,9 +28,9 @@ module.exports = async function( {
 	};
 
 	await Promise.all(
-		Object.keys( templates ).map( async ( fileName ) => {
+		Object.keys( outputFiles ).map( async ( fileName ) => {
 			const template = await readFile(
-				join( __dirname, `templates/${ templates[ fileName ] }.mustache` ),
+				join( __dirname, `templates/${ outputFiles[ fileName ] }.mustache` ),
 				'utf8'
 			);
 			writeFile(
