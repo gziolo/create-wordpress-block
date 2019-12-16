@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-const { join } = require( 'path' );
+const { dirname, join } = require( 'path' );
 const makeDir = require( 'make-dir' );
 const { readFile, writeFile } = require( 'fs' ).promises;
 const { render } = require( 'mustache' );
@@ -14,8 +14,6 @@ module.exports = async function( outputFiles, {
 	dashicon,
 	category,
 } ) {
-	await makeDir( slug );
-
 	const view = {
 		namespace,
 		slug,
@@ -33,8 +31,10 @@ module.exports = async function( outputFiles, {
 				join( __dirname, `templates/${ outputFiles[ fileName ] }.mustache` ),
 				'utf8'
 			);
+			const filePath = `${ slug }/${ fileName }`;
+			await makeDir( dirname( filePath ) );
 			writeFile(
-				`${ slug }/${ fileName }`,
+				filePath,
 				render( template, view )
 			);
 		} )
