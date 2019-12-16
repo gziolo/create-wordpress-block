@@ -2,11 +2,7 @@
   "name": "create-wordpress-block",
   "version": "0.4.0-2",
   "description": "Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.",
-  "author": {
-    "name": "Grzegorz (Greg) Ziółkowski",
-    "email": "grzegorz@gziolo.pl",
-    "url": "https://gziolo.pl"
-  },
+  "author": "Grzegorz <grzegorz@gziolo.pl> (Greg)",
   "license": "MIT",
   "keywords": [
     "wordpress",
@@ -26,7 +22,7 @@
     "*.js"
   ],
   "bin": {
-    "create-wordpress-block": "./index.js"
+    "create-wordpress-block": "index.js"
   },
   "scripts": {
     "build": "./index.js esnext-example && ./index.js -t es5 es5-example",
@@ -38,12 +34,18 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^4.0.1",
+    "execa": "^3.4.0",
     "inquirer": "^7.0.0",
     "make-dir": "^3.0.0",
-    "mustache": "^3.1.0"
+    "mustache": "^3.1.0",
+    "pkg-install": "^1.0.0",
+    "write-pkg": "^4.0.0"
   },
   "devDependencies": {
     "@wordpress/eslint-plugin": "^3.2.0",
     "@wordpress/scripts": "^6.0.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }
