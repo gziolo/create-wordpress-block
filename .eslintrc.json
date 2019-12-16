@@ -10,7 +10,7 @@
   "overrides": [
     {
       "files": [ "*.js" ],
-      "excludedFiles": [ "example-es5/*.js" ],
+      "excludedFiles": [ "es5-example/*.js" ],
       "extends": [
         "plugin:@wordpress/eslint-plugin/recommended"
       ]

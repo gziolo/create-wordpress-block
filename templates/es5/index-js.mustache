@@ -30,14 +30,20 @@
 		 * This is the display title for your block, which can be translated with `i18n` functions.
 		 * The block inserter will show this name.
 		 */
-		title: __( '{{title}}', '{{namespace}}' ),
+		title: __(
+			'{{title}}',
+			'{{namespace}}'
+		),
 
 		{{#description}}
 		/**
 		 * This is a short description for your block, can be translated with `i18n` functions.
 		 * It will be shown in the Block Tab in the Settings Sidebar.
 		 */
-		description: __( '{{description}}', '{{namespace}}' ),
+		description: __(
+			'{{description}}',
+			'{{namespace}}'
+		),
 
 		{{/description}}
 		/**

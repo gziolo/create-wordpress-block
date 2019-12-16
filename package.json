@@ -29,7 +29,7 @@
     "create-wordpress-block": "./index.js"
   },
   "scripts": {
-    "build": "./index.js example-es5",
+    "build": "./index.js esnext-example && ./index.js -t es5 es5-example",
     "lint-css": "wp-scripts lint-style",
     "lint-js": "wp-scripts lint-js",
     "test-unit": "wp-scripts test-unit-js",

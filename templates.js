@@ -1,6 +1,7 @@
 /**
  * Internal dependencies
  */
+const CliError = require( './cli-error' );
 const prompts = require( './prompts' );
 
 const namespace = 'create-wordpress-block';
@@ -11,7 +12,7 @@ const templates = {
 	es5: {
 		defaultAnswers: {
 			namespace,
-			slug: 'example-es5',
+			slug: 'es5-example',
 			title: 'ES5 Example',
 			description: 'Example block written with ES5 standard and no JSX – no build step required.',
 			dashicon,
@@ -20,7 +21,7 @@ const templates = {
 		outputFiles: {
 			'.editorconfig': 'editorconfig',
 			'editor.css': 'editor-css',
-			'index.js': 'index-js-es5',
+			'index.js': 'es5/index-js',
 			'index.php': 'index-php',
 			'style.css': 'style-css',
 		},
@@ -28,7 +29,7 @@ const templates = {
 	esnext: {
 		defaultAnswers: {
 			namespace,
-			slug: 'example-esnext',
+			slug: 'esnext-example',
 			title: 'ESNext Example',
 			description: 'Example block written with ESNext standard and JSX support – build step required.',
 			dashicon,
@@ -37,19 +38,29 @@ const templates = {
 		outputFiles: {
 			'.editorconfig': 'editorconfig',
 			'editor.css': 'editor-css',
-			'index.js': 'index-js-es5',
+			'index.js': 'esnext/index-js',
 			'index.php': 'index-php',
 			'style.css': 'style-css',
 		},
 	},
 };
 
+const getTemplate = ( templateName ) => {
+	if ( ! templates[ templateName ] ) {
+		throw new CliError(
+			'Invalid template type name.' +
+			` Allowed values: ${ Object.keys( templates ).join( ', ' ) }.`
+		);
+	}
+	return templates[ templateName ];
+};
+
 const getDefaultAnswers = ( templateName ) => {
-	return templates[ templateName ].defaultAnswers;
+	return getTemplate( templateName ).defaultAnswers;
 };
 
 const getOutputFiles = ( templateName ) => {
-	return templates[ templateName ].outputFiles;
+	return getTemplate( templateName ).outputFiles;
 };
 
 const getPrompts = ( templateName ) => {
