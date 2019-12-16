@@ -1,6 +1,6 @@
 {
   "name": "create-wordpress-block",
-  "version": "0.4.0-1",
+  "version": "0.4.0-2",
   "description": "Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.",
   "author": {
     "name": "Grzegorz (Greg) Ziółkowski",
