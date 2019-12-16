@@ -35,7 +35,10 @@ const success = ( input ) => {
 
 program
 	.name( name )
-	.description( 'Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.' )
+	.description(
+		'Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.\n\n' +
+		'[slug] is optional. When provided it triggers the quick mode where it is used as the target location for scaffolded files and the internal block name. The rest of the configuration is set to all default values.'
+	)
 	.version( version )
 	.arguments( '[slug]' )
 	.option( '-t, --template <name>', 'template type name, allowed values: "es5", "esnext"', 'esnext' )
