@@ -1,13 +1,36 @@
 # Create WordPress Block
-Generates PHP, JS and CSS code for registering a block for a WordPress plugin or theme.
+Create WordPress Block is an officially supported way to create blocks for registering
+a block for a WordPress plugin or theme. It offers a modern build setup with no
+configuration. It generates PHP, JS, CSS code, and everything else you need to start the project.
 
-![Create example block – demo](./assets/create-wordpress-block.gif)
+It is largely inspired by [create-react-app](https://create-react-app.dev/docs/getting-started).
+Major kudos to @gaearon, the whole Facebook team, and the React community.
 
 ## Description
 
-Blocks are the fundamental element of the WordPress block editor. They are the primary way in which plugins and themes can register their own functionality and extend the capabilities of the editor.
+Blocks are the fundamental element of the WordPress block editor. They are the
+primary way in which plugins and themes can register their own functionality and
+extend the capabilities of the editor.
 
-Visit the [Gutenberg handbook](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) to learn more about Block API.
+Visit the [Gutenberg handbook](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/)
+to learn more about Block API.
+
+## Quick start
+
+You just need to provide the `slug` which is the target location for scaffolded
+files and the internal block name.
+  ```bash
+  $ npm init wordpress-block todo-list
+  $ cd todo-list
+  ```
+
+  _(requires `node` version `10.0.0` or above, and `npm` version `6.1.0` or above)_
+
+![Create example block – demo](./assets/create-wordpress-block.gif)
+
+You don’t need to install or configure tools like [webpack](https://webpack.js.org),
+[Babel](https://babeljs.io) or [ESLint](https://eslint.org) yourself. They are
+preconfigured and hidden so that you can focus on the code.
 
 ## Usage
 
@@ -17,7 +40,9 @@ The following command generates PHP, JS and CSS code for registering a block.
 $ npm init wordpress-block [options] [slug]
 ```
 
-`[slug]` is optional. When provided it triggers the quick mode where it is used as the target location for scaffolded files and the internal block name. The rest of the configuration is set to all default values.
+`[slug]` is optional. When provided it triggers the quick mode where it is used
+as the target location for scaffolded files and the internal block name. The rest
+of the configuration is set to all default values.
 
 Options:
 ```bash
@@ -26,29 +51,23 @@ Options:
 -h, --help             output usage information
 ```
 
-Examples:
+More examples:
 
-1. Quick start – one command that uses defaults for all options. You just need
-to provide the `slug` which is the target location for scaffolded files
-and the internal block name.
-  ```bash
-  $ npm init wordpress-block todo-list
-  $ cd todo-list
-  ```
-2. Interactive mode - it gives a chance to customize a few most important options.
+1. Interactive mode - it gives a chance to customize a few most important options
+before the code gets generated.
   ```bash
   $ npm init wordpress-block
   ```
-3. ES5 template – it is also possible to pick ES5 template when you don't want
-to deal with a build step which enables ESNext and JSX support.
+2. ES5 template – it is also possible to pick ES5 template when you don't want
+to deal with a build step (`npm start`) which enables ESNext and JSX support.
   ```bash
   $ npm init --template es5 wordpress-block
   ```
 
 When you scaffold a block, you must provide at least a `slug` name, the `namespace`
-which usually corresponds to either the `theme` or `plugin` name, and the `category`. In most cases,
-we recommended pairing blocks with plugins rather than themes, because only using
-plugin ensures that all blocks still work when your theme changes.
+which usually corresponds to either the `theme` or `plugin` name, and the `category`.
+In most cases, we recommended pairing blocks with plugins rather than themes,
+because only using plugin ensures that all blocks still work when your theme changes.
 
 ## WP-CLI
 
