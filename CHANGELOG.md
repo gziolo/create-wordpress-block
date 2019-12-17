@@ -1,5 +1,15 @@
 ## Master
 
+## 0.4.0 (2019-12-17)
+
+### New Features
+
+- Add full support for ESNext template, including `wp-scripts` bootstrapping.
+
+### Enhancements
+
+- Improve the feedback shared on the console while scaffolding a block.
+
 ## 0.3.2 (2019-12-16)
 
 ### Bug Fix
