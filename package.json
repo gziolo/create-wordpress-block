@@ -32,6 +32,7 @@
     "build:es5": "./index.js -t es5 es5-example",
     "prebuild:esnext": "run-s clear:esnext",
     "build:esnext": "./index.js esnext-example",
+    "prebuild": "run-s check-engines",
     "build": "run-s build:*",
     "clear:es5": "rimraf ./es5-example ./esnext-example",
     "clear:esnext": "rimraf ./esnext-example",
