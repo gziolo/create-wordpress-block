@@ -62,7 +62,11 @@ before the code gets generated.
 2. ES5 template – it is also possible to pick ES5 template when you don't want
 to deal with a build step (`npm start`) which enables ESNext and JSX support.
   ```bash
-  $ npm init --template es5 wordpress-block
+  $ npm init wordpress-block --template es5
+  ```
+3. Help – you need to use `npx` to output usage information.
+  ```bash
+  $ npx create-wordpress-block --help
   ```
 
 When you scaffold a block, you must provide at least a `slug` name, the `namespace`
