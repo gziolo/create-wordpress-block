@@ -23,6 +23,7 @@ files and the internal block name.
   ```bash
   $ npm init wordpress-block todo-list
   $ cd todo-list
+  $ npm start
   ```
 
   _(requires `node` version `10.0.0` or above, and `npm` version `6.1.0` or above)_
@@ -73,6 +74,31 @@ When you scaffold a block, you must provide at least a `slug` name, the `namespa
 which usually corresponds to either the `theme` or `plugin` name, and the `category`.
 In most cases, we recommended pairing blocks with plugins rather than themes,
 because only using plugin ensures that all blocks still work when your theme changes.
+
+## Available Commands
+
+Inside that bootstrapped directory _(it doesn't apply to `es5` template)_, you
+can run several commands:
+
+```bash
+$ npm start
+```
+Starts the build for development.
+
+```bash
+$ npm run build
+```
+Builds the code for production.
+
+```bash
+$ npm run lint:css
+```
+Lints CSS files.
+
+```bash
+$ npm run lint:js
+```
+Lints JavaScript files.
 
 ## WP-CLI
 
