@@ -82,7 +82,7 @@
 			return el(
 				'p',
 				{ className: props.className },
-				__( 'Hello from the editor!', '{{namespace}}' )
+				__( '{{title}} – hello from the editor!', '{{namespace}}' )
 			);
 		},
 
@@ -98,7 +98,7 @@
 			return el(
 				'p',
 				{},
-				__( 'Hello from the saved content!', '{{namespace}}' )
+				__( '{{title}} – hello from the saved content!', '{{namespace}}' )
 			);
 		},
 	} );

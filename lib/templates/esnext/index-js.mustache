@@ -73,7 +73,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	edit( { className } ) {
 		return (
 			<p className={ className }>
-				{ __( 'Hello from the editor!', '{{namespace}}' ) }
+				{ __( '{{title}} – hello from the editor!', '{{namespace}}' ) }
 			</p>
 		);
 	},
@@ -89,7 +89,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	save() {
 		return (
 			<p>
-				{ __( 'Hello from the saved content!', '{{namespace}}' ) }
+				{ __( '{{title}} – hello from the saved content!', '{{namespace}}' ) }
 			</p>
 		);
 	},
