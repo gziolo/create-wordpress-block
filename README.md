@@ -1,6 +1,6 @@
 # Create WordPress Block
 Create WordPress Block is an officially supported way to create blocks for registering
-a block for a WordPress plugin or theme. It offers a modern build setup with no
+a block for a WordPress plugin. It offers a modern build setup with no
 configuration. It generates PHP, JS, CSS code, and everything else you need to start the project.
 
 It is largely inspired by [create-react-app](https://create-react-app.dev/docs/getting-started).

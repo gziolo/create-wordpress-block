@@ -1,5 +1,17 @@
 ## Master
 
+## 0.5.0 (2020-01-08)
+
+### New Features
+
+- Update templates to include WordPress plugin metadata by default.
+
+## 0.4.3 (2020-01-08)
+
+### Bug Fix
+
+- Print available commands only for ESNext template.
+
 ## 0.4.0 (2019-12-17)
 
 ### New Features
