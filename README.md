@@ -43,8 +43,9 @@ $ npm init wordpress-block [options] [slug]
 ```
 
 `[slug]` is optional. When provided it triggers the quick mode where it is used
-as the target location for scaffolded files and the internal block name. The rest
-of the configuration is set to all default values.
+as the block slug used for its identification, the output location for scaffolded files,
+and the name of the WordPress plugin. The rest of the configuration is set to all
+default values.
 
 Options:
 ```bash

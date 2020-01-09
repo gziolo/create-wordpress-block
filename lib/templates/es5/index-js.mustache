@@ -32,7 +32,7 @@
 		 */
 		title: __(
 			'{{title}}',
-			'{{namespace}}'
+			'{{textdomain}}'
 		),
 
 		{{#description}}
@@ -42,7 +42,7 @@
 		 */
 		description: __(
 			'{{description}}',
-			'{{namespace}}'
+			'{{textdomain}}'
 		),
 
 		{{/description}}
@@ -82,7 +82,7 @@
 			return el(
 				'p',
 				{ className: props.className },
-				__( '{{title}} – hello from the editor!', '{{namespace}}' )
+				__( '{{title}} – hello from the editor!', '{{textdomain}}' )
 			);
 		},
 
@@ -98,7 +98,7 @@
 			return el(
 				'p',
 				{},
-				__( '{{title}} – hello from the saved content!', '{{namespace}}' )
+				__( '{{title}} – hello from the saved content!', '{{textdomain}}' )
 			);
 		},
 	} );

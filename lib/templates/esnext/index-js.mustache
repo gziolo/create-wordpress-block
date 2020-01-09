@@ -24,7 +24,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	 */
 	title: __(
 		'{{title}}',
-		'{{namespace}}'
+		'{{textdomain}}'
 	),
 
 	{{#description}}
@@ -34,7 +34,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	 */
 	description: __(
 		'{{description}}',
-		'{{namespace}}'
+		'{{textdomain}}'
 	),
 
 	{{/description}}
@@ -73,7 +73,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	edit( { className } ) {
 		return (
 			<p className={ className }>
-				{ __( '{{title}} – hello from the editor!', '{{namespace}}' ) }
+				{ __( '{{title}} – hello from the editor!', '{{textdomain}}' ) }
 			</p>
 		);
 	},
@@ -89,7 +89,7 @@ registerBlockType( '{{namespace}}/{{slug}}', {
 	save() {
 		return (
 			<p>
-				{ __( '{{title}} – hello from the saved content!', '{{namespace}}' ) }
+				{ __( '{{title}} – hello from the saved content!', '{{textdomain}}' ) }
 			</p>
 		);
 	},
