@@ -1,3 +1,13 @@
+# This repository has moved!
+
+It is now part of the [WordPress/gutenberg](https://github.com/wordpress/gutenberg/) repository.
+
+The published npm package is now marked as deprecated. The usage has changed to:
+
+```bash
+$ npm init @wordpress/block [options] [slug]
+```
+
 # Create WordPress Block
 Create WordPress Block is an officially supported way to create blocks for registering
 a block for a WordPress plugin. It offers a modern build setup with no
